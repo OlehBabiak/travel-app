@@ -1,8 +1,14 @@
-import ReactDom from 'react-dom'
+import heart from '../assets/images/heart.svg'
+import classes from './Footer.module.css'
 
-const Footer = () => {
+const Footer=() => {
     return (
-       <div>Footer</div>
+        <footer className={classes['footer']}>
+      <span className={classes["footer__text"]}>
+        from <a className={classes["footer__link"]} href="https://binary-studio.com">binary studio</a> with
+        <img className={classes['footer__icon']} src={heart} alt="heart icon"/>
+      </span>
+        </footer>
     );
 }
 
