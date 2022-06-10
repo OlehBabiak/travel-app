@@ -1,8 +1,13 @@
+import classes from './HomePage.module.css'
+import TripFilter from "./Filter/TripFilter";
+import TripsList from "./TripsList/TripsList";
 
-const HomePage
-    = () => {
+const HomePage=() => {
     return (
-       <div>Home Page</div>
+        <main>
+            <TripFilter/>
+            <TripsList/>
+        </main>
     );
 }
 

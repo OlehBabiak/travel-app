@@ -1,0 +1,8 @@
+.trip-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    background-color: var(--color-light-gray);
+    border-radius: 1px;
+    box-shadow: var(--shadow);
+}

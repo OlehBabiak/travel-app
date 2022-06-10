@@ -4,9 +4,10 @@
   --color-blue-200: #96daf0;
   --color-blue-300: #7cbcde;
   --color-blue-400: #242a3a;
+  --color-light-gray: #f6f3f3;
   --color-gray: #e1e1e1;
   --overlay-color: rgba(0 0 0 0.3);
-  --shadow: -1px 4px 74px -16px rgba(0 0 0 0.15);
+  --shadow: -1px 4px 74px -16px #c9c7c7;
   --font-size-100: 14px;
   --font-size-200: 16px;
   --font-size-300: 18px;
@@ -71,4 +72,11 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+input,
+button,
+select {
+  color: inherit;
+  font-family: inherit;
 }
