@@ -1,12 +1,15 @@
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./components/Home/HomePage";
+import SignUp from "./components/SingUp/SignUp";
+import classes from './index.css'
 
 function App () {
     return (
-        <div className="App">
+        <div className={classes['wrapper']}>
             <Header/>
-            <HomePage/>
+            {/*<HomePage/>*/}
+            <SignUp/>
             <Footer/>
         </div>
     );

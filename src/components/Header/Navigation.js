@@ -2,6 +2,7 @@ import classes from './Navigation.module.css'
 import briefcase from '../assets/images/briefcase.svg'
 import profile from '../assets/images/user.svg'
 import classNames from "classnames";
+import Button from "../UI/Button";
 
 
 const Navigation = () => {
@@ -21,7 +22,11 @@ const Navigation = () => {
                         <ul className={classes["profile-nav__list"]}>
                             <li className={classNames(classes["profile-nav__item"], classes["profile-nav__username"])}>John Doe</li>
                             <li className={classes["profile-nav__item"]}>
-                                <button className={classes["profile-nav__item"]}>Sign Out</button>
+                                <Button
+                                    className={classes["profile-nav__item"]}
+                                >Sign Out
+                                </Button>
+                                {/*<button className={classes["profile-nav__item"]}>Sign Out</button>*/}
                             </li>
                         </ul>
                     </div>
