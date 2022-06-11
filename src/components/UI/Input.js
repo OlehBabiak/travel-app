@@ -3,22 +3,22 @@ import classes from './Input.module.css'
 
 
 const InputComponent=({
-                          name, type, id, value, onChange, onblur, label, autoComplete
+                          name, type, value, onChange, label, autoComplete, min, max
                       }) => {
     return (
-            <label className={classes['input']}>
-                <span className={classes['input__heading']}>{label}</span>
-                <input
-                    name={name}
-                    type={type}
-                    id={id}
-                    value={value}
-                    onChange={onChange}
-                    onBlur={onblur}
-                    autoComplete={autoComplete || ''}
-                    required
-                />
-            </label>
+        <label className={classes['input']}>
+            <span className={classes['input__heading']}>{label}</span>
+            <input
+                name={name}
+                type={type}
+                value={value || ''}
+                onChange={onChange}
+                autoComplete={autoComplete || ''}
+                min={min || ''}
+                max={max || ''}
+                required
+            />
+        </label>
     );
 }
 

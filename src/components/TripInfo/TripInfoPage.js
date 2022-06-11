@@ -4,8 +4,7 @@ import classNames from "classnames";
 import classes from './TripInfo.module.css'
 
 
-
-const TripInfoPage = () => {
+const TripInfoPage=({onShowModal}) => {
     return (
         <main className={classes['trip-page']}>
             <div className={classes['trip']}>
@@ -30,7 +29,8 @@ const TripInfoPage = () => {
                         <strong className={classes['trip-price__value']}>7000 $</strong>
                     </div>
                     <Button
-                    className={classNames(classes['trip__button'], 'button')}
+                        onClick={onShowModal}
+                        className={classNames(classes['trip__button'], 'button')}
                     >Book a trip
                     </Button>
                 </div>
