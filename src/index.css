@@ -101,7 +101,7 @@ select {
   transition: background-color 0.2s ease;
 }
 
-.wrapper {
+#root {
   min-height: 100%;
   display: flex;
   flex-direction: column;
