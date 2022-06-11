@@ -2,9 +2,16 @@ import iceland from '../assets/images/iceland.jpg'
 import Button from "../UI/Button";
 import classNames from "classnames";
 import classes from './TripInfo.module.css'
+import { useContext } from "react";
+import Context from "../../store/Context";
 
 
-const TripInfoPage=({onShowModal}) => {
+const TripInfoPage=() => {
+
+    const {showModalHandler, makeNavVisible} = useContext(Context);
+
+    makeNavVisible(true)
+
     return (
         <main className={classes['trip-page']}>
             <div className={classes['trip']}>
@@ -29,7 +36,7 @@ const TripInfoPage=({onShowModal}) => {
                         <strong className={classes['trip-price__value']}>7000 $</strong>
                     </div>
                     <Button
-                        onClick={onShowModal}
+                        onClick={showModalHandler}
                         className={classNames(classes['trip__button'], 'button')}
                     >Book a trip
                     </Button>

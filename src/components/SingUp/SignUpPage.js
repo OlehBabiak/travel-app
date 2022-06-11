@@ -1,9 +1,14 @@
 import InputComponent from "../UI/Input";
 import classes from './SignUp.module.css'
 import Button from "../UI/Button";
+import { useContext } from "react";
+import Context from "../../store/Context";
+import { Link } from "react-router-dom";
 
 const SignUpPage=() => {
+    const {makeNavVisible} = useContext(Context);
 
+    makeNavVisible(false)
     // const [formState, dispatchForm]=useReducer(formReducer, {
     //     emailValue: '',
     //     isEmailValid: null,
@@ -75,7 +80,7 @@ const SignUpPage=() => {
             </form>
             <span>
         Already have an account?
-        <a href="/" className={classes["sign-up-form__link"]}>Sign In</a>
+        <Link to="/sing-in" className={classes["sign-up-form__link"]}>Sign In</Link>
       </span>
         </main>
     );
