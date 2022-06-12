@@ -7,7 +7,7 @@ import Header from "./components/Header/Header";
 
 function App () {
     const {closeModalHandler, modalIsShown, navigationIsVisible} = useContext(Context);
-    console.log(navigationIsVisible)
+
     return (
         <Fragment>
             {modalIsShown && <Modal onCloseModal={closeModalHandler}/>}
