@@ -8,10 +8,10 @@ import BookingPage from "./Bookings/BookingPage";
 const Routes = () => {
   return (
     <Switch>
-      <Route path="/sing-up">
+      <Route path="/sign-up">
         <SignUpPage />
       </Route>
-      <Route path="/sing-in">
+      <Route path="/sign-in">
         <SignInPage />
       </Route>
       <Route path="/trip/:tripId">
