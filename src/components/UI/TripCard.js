@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const TripCard = ({ img, title, duration, level, price, id }) => {
   return (
     <div className={classes["trip-card"]}>
-      <img src={img} alt="trip image" />
+      <img src={img} alt="trip" />
       <div className={classes["trip-card__content"]}>
         <div className={classes["trip-info"]}>
           <h3 className={classes["trip-info__title"]}>{title}</h3>
