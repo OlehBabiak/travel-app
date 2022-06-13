@@ -44,7 +44,6 @@ const TripInfoPage=() => {
             </main>
         )
 
-    console.log(tripInfo)
 
     return (
         <Fragment>
