@@ -5,7 +5,6 @@ import classes from './TripInfo.module.css'
 import { useContext } from "react";
 import Context from "../../store/Context";
 
-
 const TripInfoPage=() => {
 
     const {showModalHandler, makeNavVisible} = useContext(Context);
