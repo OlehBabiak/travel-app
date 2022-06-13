@@ -8,7 +8,6 @@ const HomePage=() => {
     const [selectedByDuration, setSelectedByDuration] = useState('');
     const [selectedByLevel, setSelectedByLevel] = useState('');
     const [searchValue, setSearchValue] = useState('');
-    console.log(searchValue)
 
     const {makeNavVisible, showErrorModalHandler, tripArray} = useContext(Context);
 

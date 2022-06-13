@@ -16,14 +16,7 @@ const ModalOverlay = ({closeModal}) => {
         setEnteredGuestNumber(event.target.value)
     }
 
-    const isDistantFuture = (date, toleranceMillis = 0) => {
-        // number of milliseconds tolerance (i.e. 60000 == one minute)
-        return date.getTime() > Date.now() + toleranceMillis
-    }
-
     let today = new Date()
-    console.log(today.toISOString().slice(0, 10))
-
 
     return (
         <div className={classes['modal']}>

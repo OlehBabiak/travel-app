@@ -17,6 +17,8 @@ const SignInPage = () => {
         validatePasswordHandler,
         formIsValid} = useContext(Context);
 
+    console.log('test')
+
     makeNavVisible(false)
 
     return (
