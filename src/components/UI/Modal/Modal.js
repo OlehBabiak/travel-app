@@ -5,12 +5,14 @@ import ModalOverlay from "./ModalOverlay";
 
 const portalEl = document.getElementById("overlays");
 
-const Modal = ({ onCloseModal }) => {
+const Modal = ({ onCloseModal, price }) => {
   return (
     <Fragment>
       {ReactDOM.createPortal(<BackDrop />, portalEl)}
       {ReactDOM.createPortal(
-        <ModalOverlay closeModal={onCloseModal} />,
+        <ModalOverlay
+            price={price}
+            closeModal={onCloseModal} />,
         portalEl
       )}
     </Fragment>

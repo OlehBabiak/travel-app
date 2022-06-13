@@ -3,7 +3,7 @@ import Input from "../Input";
 import Button from "../Button";
 import { useState } from "react";
 
-const ModalOverlay = ({ closeModal }) => {
+const ModalOverlay = ({ closeModal, price }) => {
   const [enteredDate, setEnteredDate] = useState(new Date());
   const [enteredGuestNumber, setEnteredGuestNumber] = useState(1);
 
@@ -16,6 +16,8 @@ const ModalOverlay = ({ closeModal }) => {
   };
 
   let today = new Date();
+
+  const tripPrice = price * enteredGuestNumber
 
   return (
     <div className={classes["modal"]}>
@@ -54,7 +56,7 @@ const ModalOverlay = ({ closeModal }) => {
           <span className={classes["trip-popup__total"]}>
             Total:{" "}
             <output className={classes["trip-popup__total-value"]}>
-              4000$
+              {tripPrice}$
             </output>
           </span>
           <Button type="submit" className="button">
