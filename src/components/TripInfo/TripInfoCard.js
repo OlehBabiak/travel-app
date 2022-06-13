@@ -14,7 +14,7 @@ const TripInfoCard = ({
   return (
     <main className={classes["trip-page"]}>
       <div className={classes["trip"]}>
-        <img src={iceland} className={classes["trip__img"]} alt="trip image" />
+        <img src={iceland} className={classes["trip__img"]} alt="trip" />
         <div className={classes["trip__content"]}>
           <div className={classes["trip-info"]}>
             <h3 className={classes["trip-info__title"]}>{title}</h3>

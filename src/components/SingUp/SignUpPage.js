@@ -1,7 +1,7 @@
 import InputComponent from "../UI/Input";
 import classes from "./SignUp.module.css";
 import Button from "../UI/Button";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Context from "../../store/Context";
 import { Link } from "react-router-dom";
 
