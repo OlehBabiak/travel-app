@@ -19,6 +19,20 @@ const BOOKS_LIST = [
         "createdAt": "2022-05-22T17:42:49.537Z"
     },
     {
+        "id": "50f6bc2e-808d-48ed-970e-4acde5d7e723",
+        "userId": "1dd97a12-848f-4a1d-8a7d-34a2132fca94",
+        "tripId": "6417f33c-31e0-444a-abac-cd0c1f8e48d0",
+        "guests": 2,
+        "date": "2022-11-22T14:37:00.049Z",
+        "trip": {
+            "title": "Spitsbergen",
+            "duration": 11,
+            "price": 3495
+        },
+        "totalPrice": 6990,
+        "createdAt": "2022-05-22T17:45:41.982Z"
+    },
+    {
         "id": "37474dad-8407-473d-a0a1-cdb695120fad",
         "userId": "1dd97a12-848f-4a1d-8a7d-34a2132fca94",
         "tripId": "e5c23843-455a-46c2-bedb-af269089fba7",
@@ -45,29 +59,15 @@ const BOOKS_LIST = [
         },
         "totalPrice": 2145,
         "createdAt": "2022-05-22T17:44:56.660Z"
-    },
-    {
-        "id": "50f6bc2e-808d-48ed-970e-4acde5d7e723",
-        "userId": "1dd97a12-848f-4a1d-8a7d-34a2132fca94",
-        "tripId": "6417f33c-31e0-444a-abac-cd0c1f8e48d0",
-        "guests": 2,
-        "date": "2022-11-22T14:37:00.049Z",
-        "trip": {
-            "title": "Spitsbergen",
-            "duration": 11,
-            "price": 3495
-        },
-        "totalPrice": 6990,
-        "createdAt": "2022-05-22T17:45:41.982Z"
     }
 ]
 
 const BookingPage=() => {
 
     const {makeNavVisible} = useContext(Context);
-    const bookList = BOOKS_LIST.map(book =>
-
-
+    const bookList = BOOKS_LIST.sort((a, b)=> {
+        return new Date(a['date']) - new Date(b['date'])
+    }).map(book =>
         <BookInfo
             title = {book['trip']['title']}
             guests = {book['guests']}
