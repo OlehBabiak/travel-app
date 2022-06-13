@@ -7,6 +7,7 @@ const TripsList=({tripArray}) => {
     const tripList=tripArray.map(trip =>
         <TripCard
             key={trip['id']}
+            id = {trip['id']}
             img={trip['image']}
             title={trip['title']}
             duration={trip['duration']}

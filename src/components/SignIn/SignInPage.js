@@ -9,10 +9,6 @@ import { Link } from "react-router-dom";
 const SignInPage = () => {
 
     const {makeNavVisible,
-        submitHandler,
-        enteredUserName,
-        userNameChangeHandler,
-        validateNameHandler,
         enteredEmail,
         emailChangeHandler,
         validateEmailHandler,

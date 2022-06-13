@@ -1,6 +1,7 @@
 import classes from './TripCard.module.css'
+import { Link } from "react-router-dom";
 
-const TripCard =({img, title, duration, level, price})=> {
+const TripCard =({img, title, duration, level, price, id})=> {
     return (
        <div className={classes['trip-card']}>
            <img src={img} alt="trip image"/>
@@ -17,7 +18,7 @@ const TripCard =({img, title, duration, level, price})=> {
                    <strong className={classes['trip-price__value']}>{price} $</strong>
                </div>
            </div>
-           <a href="/" className='button'>Discover a trip</a>
+           <Link to={`/trip/:${id}`}  className='button'>Discover a trip</Link>
        </div>
     );
 }
