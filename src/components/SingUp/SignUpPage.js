@@ -69,7 +69,7 @@ const SignUpPage = () => {
       </form>
       <span>
         Already have an account?
-        <Link to="/sing-in" className={classes["sign-up-form__link"]}>
+        <Link to="/sign-in" className={classes["sign-up-form__link"]}>
           Sign In
         </Link>
       </span>
