@@ -5,17 +5,18 @@ import Routes from "./components/Routes";
 import Context from "./store/Context";
 import Header from "./components/Header/Header";
 
-function App () {
-    const {closeModalHandler, modalIsShown, navigationIsVisible} = useContext(Context);
+function App() {
+  const { closeModalHandler, modalIsShown, navigationIsVisible } =
+    useContext(Context);
 
-    return (
-        <Fragment>
-            {modalIsShown && <Modal onCloseModal={closeModalHandler}/>}
-            <Header isVisible={navigationIsVisible}/>
-                <Routes/>
-            <Footer/>
-        </Fragment>
-    );
+  return (
+    <Fragment>
+      {modalIsShown && <Modal onCloseModal={closeModalHandler} />}
+      <Header isVisible={navigationIsVisible} />
+      <Routes />
+      <Footer />
+    </Fragment>
+  );
 }
 
 export default App;
