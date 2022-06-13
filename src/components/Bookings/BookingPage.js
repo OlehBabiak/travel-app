@@ -1,6 +1,6 @@
 import BookInfo from "../UI/BookInfo";
 import classes from './Booking.module.css'
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Context from "../../store/Context";
 
 const BOOKS_LIST = [
@@ -64,15 +64,31 @@ const BOOKS_LIST = [
 
 const BookingPage=() => {
 
+    const [availableBooks, setAvailableBooks] = useState(BOOKS_LIST);
+
+    const removeBook = (id) => {
+        setAvailableBooks(availableBooks.filter(item => item['id'] !== id))
+    }
+
+    const onTodoDelete = (arg) => {
+        const answer = window.confirm('Are you sure?')
+        if (answer) {
+            removeBook(arg)
+        }
+    }
+
     const {makeNavVisible} = useContext(Context);
-    const bookList = BOOKS_LIST.sort((a, b)=> {
+    const bookList = availableBooks.sort((a, b)=> {
         return new Date(a['date']) - new Date(b['date'])
     }).map(book =>
         <BookInfo
+            id = {book['id']}
+            key = {book['id']}
             title = {book['trip']['title']}
             guests = {book['guests']}
             date = {new Date(book['date']).toLocaleString().slice(0,10)}
             totalPrice = {book['totalPrice']}
+            onclick = {() => onTodoDelete(book['id'])}
         />
     )
 
