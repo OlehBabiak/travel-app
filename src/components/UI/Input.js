@@ -3,7 +3,7 @@ import classes from './Input.module.css'
 
 
 const InputComponent=({
-                          name, type, value, onChange, label, autoComplete, min, max
+                          name, type, value, onChange, label, autoComplete, min, max, onBlur
                       }) => {
     return (
         <label className={classes['input']}>
@@ -16,6 +16,7 @@ const InputComponent=({
                 autoComplete={autoComplete || ''}
                 min={min || ''}
                 max={max || ''}
+                onBlur={onBlur}
                 required
             />
         </label>

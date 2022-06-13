@@ -99,6 +99,31 @@
     color: var(--color-blue-200);
 }
 
+.trip-info__error {
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-gray);
+}
+
+.trip-info__title__error {
+    font-weight: 600;
+    font-size: var(--font-size-400);
+}
+
+.trip-popup-error {
+    max-width: 100%;
+    padding: 25px 40px 30px;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    border: 2px solid #e30834;
+}
+
+.trip-info__level__error {
+    margin: 0 auto;
+    color: var(--color-blue-300);
+}
+
 @keyframes slide-down {
     from {
         opacity: 0;

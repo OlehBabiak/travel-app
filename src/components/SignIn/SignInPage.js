@@ -8,7 +8,18 @@ import { Link } from "react-router-dom";
 
 const SignInPage = () => {
 
-    const {makeNavVisible} = useContext(Context);
+    const {makeNavVisible,
+        submitHandler,
+        enteredUserName,
+        userNameChangeHandler,
+        validateNameHandler,
+        enteredEmail,
+        emailChangeHandler,
+        validateEmailHandler,
+        enteredPassword,
+        passwordChangeHandler,
+        validatePasswordHandler,
+        formIsValid} = useContext(Context);
 
     makeNavVisible(false)
 
@@ -17,18 +28,28 @@ const SignInPage = () => {
             <form className={classes['sign-in-form']} autoComplete="off">
                 <h2 className={classes['sign-in-form__title']}>Sign In</h2>
                 <Input
-                    name="email"
-                    type="email"
+                    id='email'
                     label='Email'
+                    name='email'
+                    type='email'
+                    value={enteredEmail}
+                    onChange={emailChangeHandler}
+                    onBlur={validateEmailHandler}
                 />
                 <Input
-                    name="password"
-                    type="password"
+                    id='password'
                     label='Password'
+                    name='password'
+                    type='password'
+                    value={enteredPassword}
+                    onChange={passwordChangeHandler}
+                    onBlur={validatePasswordHandler}
+                    autoComplete="new-password"
                 />
                 <Button
                     type="submit"
                     className={classes['button']}
+                    disabled={!formIsValid}
                 >
                     Sign In
                 </Button>

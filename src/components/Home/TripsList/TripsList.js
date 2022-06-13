@@ -1,5 +1,6 @@
 import classes from './TripsList.module.css'
 import TripCard from "../../UI/TripCard";
+import ErrorModalOverlay from "../../UI/Modal/ErrorModalOverlay";
 
 const TripsList=({tripArray}) => {
 
@@ -16,9 +17,10 @@ const TripsList=({tripArray}) => {
 
     return (
         <section className={classes['trips']}>
-            <ul className={classes['trip-list']}>
+            {tripArray.length > 0 ? <ul className={classes['trip-list']}>
                 {tripList}
-            </ul>
+            </ul> : <ErrorModalOverlay/>}
+
         </section>
     );
 }

@@ -73,7 +73,9 @@ const HomePage=() => {
     const [searchValue, setSearchValue] = useState('');
     console.log(searchValue)
 
-    const {makeNavVisible} = useContext(Context);
+    const {makeNavVisible, showErrorModalHandler} = useContext(Context);
+
+    AVAILABLE_TRIPS.length<=0 && showErrorModalHandler()
 
     const choiceDurationHandler = (e) => {
         setSelectedByDuration(e.target.value)

@@ -1,63 +1,49 @@
 import InputComponent from "../UI/Input";
 import classes from './SignUp.module.css'
 import Button from "../UI/Button";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Context from "../../store/Context";
 import { Link } from "react-router-dom";
 
 const SignUpPage=() => {
-    const {makeNavVisible} = useContext(Context);
+    const {makeNavVisible,
+        submitHandler,
+        enteredUserName,
+        userNameChangeHandler,
+        validateNameHandler,
+        enteredEmail,
+        emailChangeHandler,
+        validateEmailHandler,
+        enteredPassword,
+        passwordChangeHandler,
+        validatePasswordHandler,
+        formIsValid} = useContext(Context);
+
+
 
     makeNavVisible(false)
-    // const [formState, dispatchForm]=useReducer(formReducer, {
-    //     emailValue: '',
-    //     isEmailValid: null,
-    //     passValue: '',
-    //     isPassValid: null
-    // });
 
-    // const {isEmailValid: emailIsValid, isPassValid: passIsValid}=formState
 
-    const emailChangeHandler=(event) => {
-        // dispatchForm({type: 'USER_INPUT', val: event.target.value})
-    };
-
-    const passwordChangeHandler=(event) => {
-        // dispatchForm({type: 'PASS_INPUT', val: event.target.value})
-    };
-
-    const validateEmailHandler=() => {
-        // dispatchForm({type: 'INPUT_BLUR'})
-    };
-
-    const validatePasswordHandler=() => {
-        // dispatchForm({type: 'INPUT_PASS_BLUR'})
-    };
-
-    const submitHandler=(event) => {
-        // event.preventDefault();
-        // ctx.loginHandler(formState.emailValue, formState.passValue);
-    };
 
     return (
         <main className={classes["sign-up-page"]}>
-            <form className={classes["sign-up-form"]} autoComplete="off">
+            <form onSubmit={submitHandler} className={classes["sign-up-form"]} autoComplete="off">
                 <h2 className={classes["sign-up-form__title"]}>Sign Up</h2>
                 <InputComponent
                     id='full-name'
                     label='Full name'
                     name='full-name'
                     type='text'
-                    // value={formState.emailValue}
-                    onChange={emailChangeHandler}
-                    onBlur={validateEmailHandler}
+                    value={enteredUserName}
+                    onChange={userNameChangeHandler}
+                    onBlur={validateNameHandler}
                 />
                 <InputComponent
                     id='email'
                     label='Email'
                     name='email'
                     type='email'
-                    // value={formState.emailValue}
+                    value={enteredEmail}
                     onChange={emailChangeHandler}
                     onBlur={validateEmailHandler}
                 />
@@ -66,17 +52,17 @@ const SignUpPage=() => {
                     label='Password'
                     name='password'
                     type='password'
-                    // value={formState.emailValue}
-                    onChange={emailChangeHandler}
-                    onBlur={validateEmailHandler}
+                    value={enteredPassword}
+                    onChange={passwordChangeHandler}
+                    onBlur={validatePasswordHandler}
                     autoComplete="new-password"
                 />
                 <Button
                     className={classes['button']}
                     type="submit"
+                    disabled={!formIsValid}
                 >Sign Up
                 </Button>
-                {/*<button className="button" type="submit">Sign Up</button>*/}
             </form>
             <span>
         Already have an account?
